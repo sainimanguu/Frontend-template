@@ -30,7 +30,7 @@ body[theme="cyan"] .section {
     color: var(--dcyan);
 }
 
-body[theme="salamon"] {
+body[theme="salmon"] {
     background-color: var(--salmon);
 }
 

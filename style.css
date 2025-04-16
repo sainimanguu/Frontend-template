@@ -22,6 +22,10 @@ body[theme="black"] .section {
     color: var(--white)
 }
 
+.vdodiv {
+    clip-path: circle(var(--clip) at 50% 50%);
+}
+
 body[theme="cyan"] {
     background-color: var(--cyan);
 }

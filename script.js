@@ -57,16 +57,66 @@ function teamanimation() {
     })
 }
 
-gsap.to(".slide", {
-    scrollTrigger: {
-        trigger: "slides",
-        start: "top top",
-        end: "bottom bottom",
-        markers: true,
-    },
-    xPercent: -200,
-    ease: Power1
-})
+
+function paraanimation() {
+    var clutter = "";
+    document.querySelector(".textpara").textContent.split("").forEach(function (e) {
+        if (e === "  ") clutter += `<span>&nbsp;</span>`
+        clutter += `<span class="opacity-10">${e}</span>`
+    })
+
+    document.querySelector(".textpara").innerHTML = clutter;
+    gsap.to(".textpara span", {
+        scrollTrigger: {
+            trigger: ".para",
+            start: "top 60%",
+            end: "bottom 80%",
+            scrub: 0.5,
+        },
+        opacity: 1,
+        stagger: .03,
+        ease: Power4,
+    })
+
+}
+
+function locomotive() {
+    (function () {
+        const locomotiveScroll = new LocomotiveScroll();
+    })();
+}
+
+function capsuleanimation() {
+    gsap.to(".capsule:nth-child(2)", {
+        scrollTrigger: {
+            trigger: ".capsules",
+            start: "top 70%",
+            end: "bottom bottom",
+            markers: true,
+            scrub: 1,
+        },
+
+        y: 0,
+        ease: Power4,
+    })
+}
+
+
+
+
+// gsap.to(".slide", {
+//     scrollTrigger: {
+//         trigger: "slides",
+//         start: "top top",
+//         end: "bottom bottom",
+//         markers: true,
+//     },
+//     xPercent: -200,
+//     ease: Power1
+// })
 
 homepageanimation();
 teamanimation();
+paraanimation();
+locomotive();
+capsuleanimation();

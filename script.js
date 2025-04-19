@@ -92,7 +92,6 @@ function capsuleanimation() {
             trigger: ".capsules",
             start: "top 70%",
             end: "bottom bottom",
-            markers: true,
             scrub: 1,
         },
 
@@ -101,6 +100,30 @@ function capsuleanimation() {
     })
 }
 
+function changecolor() {
+    document.querySelectorAll(".section").forEach(function (e) {
+        ScrollTrigger.create({
+            trigger: e,
+            start: "top 50%",
+            end: "botttom 50%",
+            onEnter: function () {
+                e.dataset.color,
+                    document.body.setAttribute("theme", e.dataset.color)
+            },
+            onEnterBack: function () {
+                document.body.setAttribute("theme", e.dataset.color)
+            }
+        })
+    })
+}
+
+
+homepageanimation();
+teamanimation();
+paraanimation();
+locomotive();
+capsuleanimation();
+changecolor();
 
 
 
@@ -114,9 +137,3 @@ function capsuleanimation() {
 //     xPercent: -200,
 //     ease: Power1
 // })
-
-homepageanimation();
-teamanimation();
-paraanimation();
-locomotive();
-capsuleanimation();

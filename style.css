@@ -7,6 +7,9 @@
     --dcyan: #1f2f32;
 }
 
+body {
+    transition: background-color ease-out .5s;
+}
 
 *::selection {
     background-color: var(--salmon);
@@ -15,7 +18,7 @@
 
 
 body[theme="black"] {
-    background-color: black;
+    background-color: var(--black);
 }
 
 body[theme="black"] .section {

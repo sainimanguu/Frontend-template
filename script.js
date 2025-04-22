@@ -117,6 +117,19 @@ function changecolor() {
     })
 }
 
+function realanimation() {
+    gsap.to(".slide", {
+        scrollTrigger: {
+            trigger: ".real",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+        },
+        xPercent: -200,
+        ease: Power4,
+    })
+}
+
 
 homepageanimation();
 teamanimation();
@@ -124,16 +137,7 @@ paraanimation();
 locomotive();
 capsuleanimation();
 changecolor();
+realanimation();
 
 
 
-// gsap.to(".slide", {
-//     scrollTrigger: {
-//         trigger: "slides",
-//         start: "top top",
-//         end: "bottom bottom",
-//         markers: true,
-//     },
-//     xPercent: -200,
-//     ease: Power1
-// })
